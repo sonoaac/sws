@@ -1,17 +1,12 @@
 
-import AnimatedHeader from '../components/AnimatedHeader';
-import React, { useState } from 'react';
-import ContactModal from '../components/ContactModal';
-import QuoteBooklet from '../components/QuoteBooklet';
-import DemoShowcase from '../components/DemoShowcase';
 
+import React from 'react';
+import DemoShowcase from '../components/DemoShowcase';
+import QuoteBooklet from '../components/QuoteBooklet';
 
 export default function Home() {
-  const [contactOpen, setContactOpen] = useState(false);
-  const [quoteOpen, setQuoteOpen] = useState(false);
   return (
     <>
-      <AnimatedHeader onContact={() => setContactOpen(true)} onQuote={() => setQuoteOpen(true)} />
       <div className="flex pl-14" style={{ fontSize: '13pt', background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.03) 0%, rgba(244, 114, 182, 0.03) 100%)' }}>
         {/* Right Side - PC Build Promo: 5 images in grid, larger */}
         <div className="w-full flex flex-col items-center justify-start p-4" style={{ fontSize: '13pt', paddingTop: '80px' }}>
@@ -37,8 +32,7 @@ export default function Home() {
         </p>
       </div>
       <DemoShowcase />
-      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
-      <QuoteBooklet open={quoteOpen} onClose={() => setQuoteOpen(false)} />
+      <QuoteBooklet open={false} onClose={() => {}} />
     </>
   );
 }
